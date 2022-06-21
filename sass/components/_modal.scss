@@ -52,6 +52,11 @@
    background-color: rgba(255, 255, 255, 1);
 
    transition: fill 250ms var(--timing-function);
+
+   &:focus,
+   &:hover {
+   fill: var(--accent-color);
+   }
 }
 
 .close-button__icon {
@@ -59,11 +64,6 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-}
-
-.close-button:focus,
-.close-button:hover {
-   fill: var(--accent-color);
 }
 
 .form-action {
@@ -101,10 +101,10 @@
    flex-direction: column;
    justify-content: center;
    padding: 0;
-}
 
-.form-field:not(:last-child) {
+   &:not(:last-child) {
    margin-bottom: 10px;
+   }
 }
 
 .form-field__input {
@@ -116,6 +116,11 @@
    padding-left: 35px;
 
    cursor: pointer;
+
+   &:focus{
+   outline: none;
+   border: 1px solid var(--accent-color);
+   }
 }
 
 .form-field__icon {
@@ -133,13 +138,6 @@
    fill: var(--accent-color);
 }
 
-.form-field__input:focus,
-.form-field textarea:focus {
-   outline: none;
-   border: 1px solid var(--accent-color);
-}
-
-
 .form-field__label {
    margin-bottom: 4px;
 
@@ -150,14 +148,6 @@
    color: var(--primary-text-color)
 }
 
-.form-field textarea::placeholder {
-   font-size: 12px;
-   line-height: 1.16;
-   letter-spacing: 0.01em;
-
-   color: rgba(117, 117, 117, 0.5);
-}
-
 textarea {
    resize: none;
    height: 120px;
@@ -166,11 +156,25 @@ textarea {
    border: 1px solid rgba(33, 33, 33, 0.2);
    border-radius: 4px;
    cursor: pointer;
+
+   &:focus {
+   outline: none;
+   border: 1px solid var(--accent-color);
+   }
+
+   &::placeholder {
+   font-size: 12px;
+   line-height: 1.16;
+   letter-spacing: 0.01em;
+   
+   color: rgba(117, 117, 117, 0.5);
+   }
 }
 
 .label {
-   display: flex;
-   align-items: center;
+   // display: flex;
+   // align-items: center;
+   @include centredFlex(center, stretch);
    margin-bottom: 30px;
 
    line-height: 1.71;
@@ -219,10 +223,4 @@ textarea {
    display: inline;
    color: var(--accent-color);
    margin-left: 3px;
-}
-
-.primary-button--large {
-   padding: 10px 55px;
-
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }

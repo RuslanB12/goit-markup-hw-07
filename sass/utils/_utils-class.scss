@@ -1,4 +1,4 @@
-body {
+body{
    color: var(--primary-text-color);
    background-color: var(--white-color);
 
@@ -7,35 +7,37 @@ body {
    font-size: 14px;
 }
 
-.list {
-   list-style: none;
-   padding: 0;
-   margin: 0;
-}
+// Перенес в плейсхолдеры
+// .list{
+//    list-style: none;
+//    padding: 0;
+//    margin: 0;
+// }
 
-.link {
+.link{
    text-decoration: none;
 }
 
-.accent {
+.accent{
    color: var(--accent-color);
 }
 
-.section {
+// Перенес также в плейсхолдеры
+.section{
    padding-top: 94px;
    padding-bottom: 94px;
 }
 
-a {
+a{
    display: block;
 }
 
-img {
+img{
    display: block;
    max-width: 100%;
 }
 
-.container {
+.container{
    margin-left: auto;
    margin-right: auto;
    width: 1200px;
@@ -43,7 +45,7 @@ img {
    padding-left: 15px;
 }
 
-.visually-hidden {
+.visually-hidden{
    position: absolute;
    width: 1px;
    height: 1px;

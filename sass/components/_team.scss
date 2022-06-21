@@ -1,13 +1,11 @@
 .section-team {
+   @extend %section;
    background-color: var(--bcg-second-color);
 }
 
 .team-list {
    display: flex;
-}
-
-.team-list__item+.team-list__item {
-   margin-left: 30px;
+   @extend %list;
 }
 
 .team-list__title {
@@ -38,6 +36,10 @@
    border-radius: 0px 0px 4px 4px;
 
    text-align: center;
+
+   & + & {
+   margin-left: 30px;
+   }
 }
 
 .team-box {
@@ -45,23 +47,25 @@
 }
 
 .list-actions {
-   display: flex;
-   align-items: center;
+   // display: flex;
+   // align-items: center;
+   @include centredFlex(center, stretch);
 }
 
 .list-actions__item {
    display: flex;
    align-items: center;
-}
 
-.list-actions__item:not(:last-child) {
+   &:not(:last-child) {
    margin-right: 10px;
+   }
 }
 
 .list-actions__link {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   // display: flex;
+   // align-items: center;
+   // justify-content: center;
+   @include centredFlex();
 
    height: 44px;
    width: 44px;
@@ -71,13 +75,13 @@
    background-color: rgba(255, 255, 255, 0.1);
 
    transition: color 250ms var(--timing-function),
-      background-color 250ms var(--timing-function);
-}
+   background-color 250ms var(--timing-function);
 
-.list-actions__link:hover,
-.list-actions__link:focus {
+   &:hover,
+   &:focus {
    background-color: var(--accent-color);
    color: var(--white-color);
+   }
 }
 
 .list-actions__icon {
